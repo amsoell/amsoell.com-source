@@ -1,19 +1,34 @@
 enable  : true
-title   : My Skillset
+title   : The Wheelhouse
 subtitle: >
-  Here's what I can do for you
+  Every developer brings a particular set of skills to a team. Here's what I pride myself on.
 item    :
   - icon  : ion-ios-lightbulb-outline
     title : Problem solver
     description : >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.
+      Nothing excites me more than taking a complex problem, breaking it down, and finding an elegant solution.
 
   - icon  : ion-ios-barcode-outline
     title : An eye for detail
     description : >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.
+      I'm a stickler for writing clean, self-documenting code that other developers can make sense of.
 
   - icon  : ion-ios-americanfootball-outline
     title : Team player
     description : >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.
+      Whether it's sitting down with a team of developers to delegate tasks or pair programming, working together benefits everyone.
+
+  - icon  : ion-ios-checkmark-outline
+    title : Test Driven
+    description : >
+      Test coverage should never be an afterthought. I practice test driven development and nothing give me a bigger thrill than that green "OK"
+
+  - icon  : ion-ios-cloud-outline
+    title : DevOps
+    description : >
+      Written code is only one half of the puzzle. I speak Ubuntu, Elastic Beanstalk, Ansible, and Continuous Deployment.
+
+  - icon  : ion-code
+    title : API Development
+    description : >
+      I'm particularly passionate about designing and implementing robust, semantic RESTful APIs.

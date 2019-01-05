@@ -39,19 +39,17 @@ theme = "timer"
         [[params.banner.flipText]]
             title   = "developer"
         [[params.banner.flipText]]
-            title   = "writer"
+            title   = "systems architect"
         [[params.banner.flipText]]
-            title   = "traveller"
+            title   = "problem solver"
         [[params.banner.flipText]]
-            title   = "husband"
-        [[params.banner.flipText]]
-            title   = "father"
+            title   = "leader"
 
     # Homepage About Section
     [params.about]
         enable  = true
-        title   = "ABOUT ME"
-        content = "Hello."
+        title   = "About me"
+        content = "Hello! I'm a software developer who is passionate about changing the world. I have worked within a broad range of industries&mdash;from biosciences to marketing to non-profit legal&mdash;and in each role I have worked to define and overcome unique challenges. <br /><br /> When I'm not working I love to travel with my family and write. I currently live in Prague, and one day I will <em>definitely</em> finish writing this novel."
         image   = "images/about/about.png"
 
     # Call to Action
