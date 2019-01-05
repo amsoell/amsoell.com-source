@@ -64,7 +64,7 @@ theme = "timer"
     [params.portfolio]
         enable  = true
         title   = "Projects"
-        subtitle= "Here is what I have been working on."
+        subtitle= "A few examples of collaborations I have been part of."
 
     # Feature Product Section
     [params.featureProduct]

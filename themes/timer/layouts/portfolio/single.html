@@ -54,7 +54,7 @@
                     <h6>{{ . }}</h6>
                     {{ end }}
                     <h5>category</h5>
-                    <h6>Investment, Business</h6>
+                    <h6>{{ delimit .Params.category ", " }}</h6>
                     {{ with .Params.location }}
                     <h5>locations</h5>
                     <h6>{{ . }}</h6>
