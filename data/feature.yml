@@ -1,0 +1,19 @@
+enable  : true
+title   : My Skillset
+subtitle: >
+  Here's what I can do for you
+item    :
+  - icon  : ion-ios-lightbulb-outline
+    title : Problem solver
+    description : >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.
+
+  - icon  : ion-ios-barcode-outline
+    title : An eye for detail
+    description : >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.
+
+  - icon  : ion-ios-americanfootball-outline
+    title : Team player
+    description : >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.

@@ -1,0 +1,91 @@
+baseURL = "https://amsoell.com/"
+languageCode = "en-us"
+title = "Andy Soell"
+theme = "timer"
+
+[menu]
+    [[menu.nav]]
+        name    = "About"
+        url     = "/about"
+        weight  = 2
+    [[menu.nav]]
+        name    = "Projects"
+        url     = "/projects"
+        weight  = 3
+    [[menu.nav]]
+        name    = "Blog"
+        url     = "/blog"
+        weight  = 5
+    [[menu.nav]]
+        name    = "Contact"
+        url     = "/contact"
+        weight  = 6
+
+[params]
+    home = "Home"
+
+    logo = "images/logo.png"
+    logo_text = "Andy Soell"
+
+    # Banner Section
+    [params.banner]
+        enable  = true
+        bgImage = "images/slider.jpg"
+        heading = "Hi, my name is Andy & I am a"
+        description = "With 20 years of experience, I have occupied many roles including backend developer, project architect, team lead, and all around problem solver. This site shows you a bit about me and my work."
+        btn     = false
+        btnText = "Learn More"
+        btnURL  = "/about"
+        [[params.banner.flipText]]
+            title   = "developer"
+        [[params.banner.flipText]]
+            title   = "writer"
+        [[params.banner.flipText]]
+            title   = "traveller"
+        [[params.banner.flipText]]
+            title   = "husband"
+        [[params.banner.flipText]]
+            title   = "father"
+
+    # Homepage About Section
+    [params.about]
+        enable  = true
+        title   = "ABOUT ME"
+        content = "Hello."
+        image   = "images/about/about.png"
+
+    # Call to Action
+    [params.cta]
+        enable  = true
+        title   = "Want to learn more ?"
+        content = "I'm always looking for a great project or team to work with, drop me a message and let's find time to talk about what you're working on."
+        btnText = "Contact with me"
+        btnURL  = "/contact"
+
+    # Portfolio Section On Homepage
+    [params.portfolio]
+        enable  = true
+        title   = "Projects"
+        subtitle= "Here is what I have been working on."
+
+    # Feature Product Section
+    [params.featureProduct]
+        enable  = true
+        title   = "SOME OF OUR FEATURES WORKS"
+        subtitle= "Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+
+    # Footer section
+    [params.footer]
+        something = "hi"
+        [[params.footer.social]]
+            icon = "ion-social-facebook"
+            link = "https://facebook.com/amsoell"
+        [[params.footer.social]]
+            icon = "ion-social-twitter"
+            link = "https://twitter.com/amsoell"
+        [[params.footer.social]]
+            icon = "ion-social-linkedin"
+            link = "https://linkedin.com/in/amsoell"
+        [[params.footer.social]]
+            icon = "ion-social-github"
+            link = "https://github.com/amsoell"
