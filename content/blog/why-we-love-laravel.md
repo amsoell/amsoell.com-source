@@ -1,7 +1,6 @@
 ---
 title: Why We Love Laravel
 date: 2016-01-28
-author: andy
 description: "We do a lot of our backend application development in PHP, and preferably with the Laravel framework. What do we love so much about Laravel? We're glad you asked."
 tags: [ "development", "backend", "php", "laravel" ]
 ---
