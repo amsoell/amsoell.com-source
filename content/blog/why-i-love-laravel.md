@@ -1,13 +1,13 @@
 ---
-title: Why We Love Laravel
+title: Why I Love Laravel
 date: 2016-01-28
-description: "We do a lot of our backend application development in PHP, and preferably with the Laravel framework. What do we love so much about Laravel? We're glad you asked."
+description: "I do a lot of backend application development in PHP, and preferably with the Laravel framework. What do I love so much about Laravel? Glad you asked."
 tags: [ "development", "backend", "php", "laravel" ]
 ---
 
 For the longest time I was a language purist. Every line of code I wrote was done by hand using nothing but a simple text editor and a PHP reference book. Inline tag completion? _That's cheating!_ Starting templates? _Shortcuts are for the weak!_ And programming frameworks? Why would I tie myself to an abstraction when I can write "real code?"
 
-This was the early 2000's though, and things have come a long way since then. We've moved through CakePHP to CodeIgnitor to modern, truly impressive frameworks like ExpressionEngine, Craft, and now Laravel. I've dabbled in most of them, but it wasn't until Laravel that I truly felt at home in a PHP framework. Since devoting our PHP developer efforts on Laravel I've begun enjoying writing PHP-based project again, and I'd like to tell you a few reasons why.
+This was the early 2000's though, and things have come a long way since then. We've moved through CakePHP to CodeIgnitor to modern, truly impressive frameworks like ExpressionEngine, Craft, and now Laravel. I've dabbled in most of them, but it wasn't until Laravel that I truly felt at home in a PHP framework. Since devoting my PHP development efforts to Laravel I've begun enjoying writing PHP-based project again, and I'd like to tell you a few reasons why.
 
 ## Eloquent: Laravel's database abstration layer
 
@@ -44,7 +44,7 @@ class UserTest extends TestCase {
 }
 ```
 
-More than simply testing our user-facing pages, we can also use Laravel's built-in unit testing to make sure an API is working as expected:
+More than simply testing user-facing pages, I also use Laravel's built-in unit testing to make sure an API is working as expected:
 
 ```php
 class ApiTest extends TestCase {
@@ -60,11 +60,11 @@ class ApiTest extends TestCase {
 }
 ```
 
-If we write our tests concurrently with writing our routes and controllers (you _are_ writing your tests while you write your routes and controllers, right??) we can test our entire application at any time by running `phpunit` from the terminal. Laravel's testing capabilities go [so much further](https://laravel.com/docs/5.2/testing), but this gives you a good idea of where it starts.
+If writing tests concurrently with routes and controllers (you _are_ writing your tests while you write your routes and controllers, right??) you can test an entire application at any time by running `phpunit` from the terminal. Laravel's testing capabilities go [so much further](https://laravel.com/docs/testing), but this gives you a good idea of where it starts.
 
 ## Migrations
 
-Version control makes building complex applications with a large team of developers a lot simpler. Database development, however, has largely lived outside of the version control ecosystem, making it difficult to track who has the latest version of the data schema. Laravel solves this through its [migrations system](https://laravel.com/docs/5.2/migrations). Rather than build your database structure right in the database, you build a series of data model definitions directly inside your Laravel application. For example:
+Version control makes building complex applications with a large team of developers a lot simpler. Database development, however, has largely lived outside of the version control ecosystem, making it difficult to track who has the latest version of the data schema. Laravel solves this through its [migrations system](https://laravel.com/docs/migrations). Rather than build your database structure right in the database, you build a series of data model definitions directly inside your Laravel application. For example:
 
 ```php
 Schema::create('questions', function (Blueprint $table) {
@@ -83,11 +83,11 @@ It's pretty clear what this does: It defines a simple table with an id field, a 
 1. Your database structure is now part of the code, which means it is part of your version control strategy.
 2. You can rebuild your database as-needed from the command line with a few keystrokes.
 
-Deploying to a new platform? A simple `artisan migrate` and the database is completely built out. You can even go a step further by taking advantage of Laravel's [seeding hooks](https://laravel.com/docs/5.2/seeding) to fill up the database with the right starting-point data.
+Deploying to a new platform? A simple `artisan migrate` and the database is completely built out. You can even go a step further by taking advantage of Laravel's [seeding hooks](https://laravel.com/docs/seeding) to fill up the database with the right starting-point data.
 
 ## Scheduled task support
 
-Scheduled tasks are another area where, many times, you have important code that is built and maintained completely outside of the main application structure. Laravel brings scheduled tasks into the application itself through its [task scheduling system](https://laravel.com/docs/5.2/scheduling). A single cron entry is added to the system's crontab after which all tasks can be defined and managed right in the application, making full use of established controllers, data models, and configuration settings.
+Scheduled tasks are another area where, many times, you have important code that is built and maintained completely outside of the main application structure. Laravel brings scheduled tasks into the application itself through its [task scheduling system](https://laravel.com/docs/scheduling). A single cron entry is added to the system's crontab after which all tasks can be defined and managed right in the application, making full use of established controllers, data models, and configuration settings.
 
 A scheduled task in a Laravel application is just this simple:
 
@@ -104,7 +104,7 @@ It doesn't get much easier than that. The scheduled task is right inside the app
 
 ## Routing
 
-Routing! This one should be absolutely be higher on the list. With Laravel it is insanely easy to define your [application routes](https://laravel.com/docs/5.2/routing) in a single unified location. You can make them as simple or as complex as you like. If you just have a couple of routes that tie into your controllers, it can be as simple as defining the route and indicating which controller method should handle it:
+Routing! This one should be absolutely be higher on the list. With Laravel it is insanely easy to define your [application routes](https://laravel.com/docs/routing) in a single unified location. You can make them as simple or as complex as you like. If you just have a couple of routes that tie into your controllers, it can be as simple as defining the route and indicating which controller method should handle it:
 
 ```php
 Route::get('about', 'ContentController@showAbout');
@@ -130,7 +130,7 @@ artisan controller:make UserOrderItemController
 
 The result of this is three brand new controller files, completely stubbed out with the appropriate `index`, `create`, `store`, `show`, `edit`, `update`, and `destroy` methods ready to be fleshed out.
 
-Additionally, through Laravel's flexible middleware system, we can even wrap all of these requests in a directive that ensures that only authenticated users can access the routes, right here in the same file:
+Additionally, through Laravel's flexible middleware system, you can even wrap all of these requests in a directive that ensures that only authenticated users can access the routes, right here in the same file:
 
 ```php
 Route::group(array('middleware' => 'auth'), function() {
@@ -140,8 +140,8 @@ Route::group(array('middleware' => 'auth'), function() {
 });
 ```
 
-This is really just the beginning of what Laravel’s routing system can do for us; There is so much more, including built-in CSRF protection, subdomain routing, and [custom middleware](https://laravel.com/docs/5.2/middleware).
+This is really just the beginning of what Laravel’s routing system can do for us; There is so much more, including built-in CSRF protection, subdomain routing, and [custom middleware](https://laravel.com/docs/middleware).
 
 ## Scratching the surface
 
-Really, I could go on and on ([Authentication](https://laravel.com/docs/5.2/authentication)! [Stripe integration](https://laravel.com/docs/5.2/billing)! [Blade templating](https://laravel.com/docs/5.2/blade)!) but I'll stop here for now. Needless to say, Laravel has made writing robust web applications fun again. If you've found writing PHP applications tedious and repetitive, give Laravel a chance on your next application.
+Really, I could go on and on ([Authentication](https://laravel.com/docs/authentication)! [Stripe integration](https://laravel.com/docs/billing)! [Blade templating](https://laravel.com/docs/blade)!) but I'll stop here for now. Needless to say, Laravel has made writing robust web applications fun again. If you've found writing PHP applications tedious and repetitive, give Laravel a chance on your next application.
