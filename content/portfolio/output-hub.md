@@ -2,8 +2,8 @@
 title: "Output Hub"
 type: portfolio
 date: 2016-07-15
-caption: Electron Desktop Application
-image: images/portfolio/output-hub.png
+caption: Custom App Store for Musicians
+image: images/portfolio/output-hub.jpg
 category: ["electron","desktop","angular"]
 liveLink: https://output.com/hub
 client: Output, Inc.
