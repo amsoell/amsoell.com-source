@@ -7,5 +7,5 @@ image: images/portfolio/fluentize.jpg
 category: ["laravel","commerce","stripe"]
 liveLink: https://app.fluentize.com
 client: Fluentize
-submitDate: July 18, 2018
+submitDate: 18 July 2018
 ---

@@ -7,7 +7,7 @@ image: images/portfolio/output-hub.jpg
 category: ["electron","desktop","angular"]
 liveLink: https://output.com/hub
 client: Output, Inc.
-submitDate: July 18, 2016
+submitDate: 18 July 2016
 ---
 
 Output Inc. is an LA-based software studio that specializes in building tools to help musicians, DJs and producers make beautiful music. Output’s software products, including their REV, Exhale, and Signal engines, are used by thousands of musicians every day to create unique and captivating sounds. When Output was looking for a development partner to help them retool their software distribution system, I stepped in to help them get their vision from dream to reality.

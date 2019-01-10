@@ -7,5 +7,5 @@ image: images/portfolio/under-the-doormat.jpg
 category: ["php","commerce","stripe"]
 liveLink: https://underthedoormat.com
 client: Under the Doormat.
-submitDate: July 18, 2017
+submitDate: 18 July 2017
 ---
