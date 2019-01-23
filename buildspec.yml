@@ -11,6 +11,10 @@ phases:
         commands:
             - echo "Building web site"
             - hugo
+    post_build:
+        commands:
+            - echo "Invalidating CloudFront cache"
+            - aws cloudfront create-invalidation --distribution-id E39L96LWBSWYC8 --paths /*.html /images/**/* /js/* /css/*
 artifacts:
     files:
       - '**/*'
