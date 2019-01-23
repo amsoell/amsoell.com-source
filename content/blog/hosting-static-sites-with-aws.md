@@ -143,6 +143,8 @@ artifacts:
 
 Once this file is added to your Git repository, you will need to set up the actual build project in CodeBuild. Start by clicking the "Create build project." As I alluded to earlier, there are a lot of options here. Let's look a the important ones:
 
+{{< figure src="/images/posts/static_site_aws/codebuild_setup.png" width="100%" >}}
+
 + _Project name_: Just a friendly name to remind you what the build is for. I wrote mine to match the domain name.  
 + _Source provider_: Our code is coming from CodeCommit, so set that appropriately  
 + _Repository_: Should be set to the Git repository name we selected in CodeCommit  
