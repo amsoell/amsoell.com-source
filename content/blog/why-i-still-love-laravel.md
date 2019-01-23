@@ -14,7 +14,7 @@ Laravel is more than capable of running a complete web application, but oftentim
 
 A great example of this is sending email. Application-generated email is important, but given the choice between improved application responsiveness and a second or two delay in delivering email, it's an easy decision. I'm getting ready to ship a new product that generates _a lot_ of email, and I've made heavy use of queues to make sure the API stays responsive and that emails are only sent out when the system resources are there to handle it. Here's what the code looks like.
 
-```php
+{{< highlight php >}}
 Mail::queue(['mail.out.html', 'mail.out.plain'], $data, function ($mailable) use ($data) {
 	// Add the appropriate headers
 	$headers = $mailable->getSwiftMessage()->getHeaders();
@@ -29,7 +29,7 @@ Mail::queue(['mail.out.html', 'mail.out.plain'], $data, function ($mailable) use
 		->from($data['inbox']['email'], $data['from_name'])
 		->subject($data['subject']);
 }, 'outbound');
-```
+{{< / highlight >}}
 
 The important lines here at the first and the last. If you were sending this email immediately, you would make use of the `Mail::send` method. In order to queue the message, all you need to do is instead use the `Mail::queue` method. It's just that easy. By doing that your email will be packaged up and passed along to your queued task manager, whether it's Beanstalkd, Redis, or a even a custom Laravel controller, and run when the system has the appropriate bandwidth to handle it.
 
@@ -37,10 +37,10 @@ It's also worth noting the last line, the optional fourth paramter to the `Mail:
 
 But queues don't stop at mail; You can queue literally any task you like by wrapping it in a job and dispatching it to your queue. For example, in this upcoming application incoming email is received and run it through a controller called `ProcessInboundItem`. This does some important data processing, but it doesn't need to run the instant that the email is received, so instead of running it directly it is packaged up and sent to the queue for later processing. It looks like this.
 
-```php
+{{< highlight php >}}
 $job = (new ProcessInboundItem($request->all()))->onQueue('inbound');
 $this->dispatch($job);
-```
+{{< / highlight >}}
 
 That's all there is to it. The task is now in the `inbound` queue bucket and will be processed when they system is ready for it. That usually means a few seconds, but it's good to know that if the server is under heavy load these tasks can sit in the queue for minutes so the server can give all of its attention handling incoming API requests.
 
@@ -48,7 +48,7 @@ That's all there is to it. The task is now in the `inbound` queue bucket and wil
 
 Really, what makes Laravel such a joy to work with isn't _necessarily_ the features baked in, but it's the nuance and the way in which they're used. Take user permissions for example. Any developer worth their salt can code a multi-layered access control system without too much trouble. [Laravel's Policy system](https://laravel.com/docs/authorization) gives you a big head start on it, and actually makes adding policy rules to your controller readable. For example, take this snippet from an application that defined the policy for allowing a user to post a comment.
 
-```php
+{{< highlight php >}}
 // app/Policies/CommentPolicy.php
 
 class CommentPolicy {
@@ -60,11 +60,11 @@ class CommentPolicy {
 
 	...
 }
-```
+{{< / highlight >}}
 
 The `CommentPolicy::store` method takes in a User object and a Comment object and does a quick check to see if the user is allowed to post that comment. Pretty simple stuff. But the way this is tied in on the controller is what makes Laravel's Policies a pleasure to work with.
 
-```php
+{{< highlight php >}}
 // app/Http/Controllers/CommentController.php
 
 if ($user->can('store', $comment)) {
@@ -72,7 +72,7 @@ if ($user->can('store', $comment)) {
 } else {
     ...
 }
-```
+{{< / highlight >}}
 
 When you're reading through your code, it's _painfully_ obvious what these lines do. That's what so great about Laravel's Policies, and really nearly every aspect of the way the framework is designed.
 
@@ -80,7 +80,7 @@ When you're reading through your code, it's _painfully_ obvious what these lines
 
 [Laravel Scout](https://laravel.com/docs/scout) is one of the brand new features that was introduced in Laravel 5.3, and it brings full-text searching directly into your Eloquent models. Through a series of drivers, you can now quickly and easily make any fields fully searchable without writing painful raw database queries. I'm using it to make email messages searchable. Here's what the model looks like.
 
-```php
+{{< highlight php >}}
 // app/Message.php
 
 use Laravel\Scout\Searchable;
@@ -101,11 +101,11 @@ class Message extends BaseModel {
 
     ...
 }
-```
+{{< / highlight >}}
 
 Once you've [installed and configured your Scout driver](https://laravel.com/docs/scout#installation) there are only two things you need to do to make your models fully searchable. First, add the `Searchable` trait to your class, and then define which attributes should be indexed with the `toSearchableArray` method. That's it. Once that's done the [Laravel model observers](https://laravel.com/docs/eloquent#observers) will automatically keep your indices up-to-date by watching as your objects are created, updated and deleted. To actually perform the search, it's as simple as using the `search` method on the model.
 
-```php
+{{< highlight php >}}
 // app/Http/Controllers/MessageController.php
 
 class MessageController extends Controller {
@@ -120,7 +120,7 @@ class MessageController extends Controller {
 
     ...
 }
-```
+{{< / highlight >}}
 
 And, of course, the indexing process can be offloaded to your queues so you can be sure your application will stay super responsive.
 
@@ -128,7 +128,7 @@ And, of course, the indexing process can be offloaded to your queues so you can 
 
 Even five years ago, the idea of a "user notification" typically meant one thing: an email. Modern applications built today, though, need to think about notifying users where it's most convient for them. That might mean email, but it might also mean text messaging, or a post in a Slack channel. It could mean a Twitter mention, triggering a custom webhook, or firing off a desktop notification—the possibilities are quite limitless. So I'm absolutely in love with another feature introduced in Laravel 5.3, and that's the concept of [Notification abstraction](https://www.laravel.com/docs/notifications). Rather than hard-coding the logic of sending an email in one of your controllers, you can instead build up a general "notification" object and send it off. Continuing from the earlier example, here's how it notifies users when an inbound email has been received that needs their attention.
 
-```php
+{{< highlight php >}}
 // app/jobs/ProcessInboundItem.php
 class ProcessInboundItem implements ShouldQueue {
 
@@ -140,7 +140,7 @@ class ProcessInboundItem implements ShouldQueue {
 
     ...
 }
-```
+{{< / highlight >}}
 
 You'll notice there isn't a single mention of an "email" here at all. We're merely telling the application that the specified users should be notified; It's up to the notification controller to figure out how that's done, whether it's based on a user preference setting or based on the content of the message. You can even hard-code it to only send emails, but by using Laravel Notifications you have flexilibity to expand it when you add more notification channels in the future.
 

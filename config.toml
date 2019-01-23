@@ -2,6 +2,7 @@ baseURL = "https://amsoell.com/"
 languageCode = "en-us"
 title = "Andy Soell"
 theme = "timer"
+pygmentsUseClasses = true
 
 [menu]
     [[menu.nav]]

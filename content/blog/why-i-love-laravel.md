@@ -15,15 +15,15 @@ Laravel is far from unique in this one, but their database abstraction layer is 
 
 Secondly, and perhaps even more impressively, writing your database queries is so much cleaner and self-documenting when you're using Eloquent's methods than trying to pick apart a SQL statement. For example, instead of the following fairly tame SQL statement:
 
-```sql
+{{< highlight sql "" >}}
 SELECT * FROM questions LEFT JOIN answers ON questions.id=answers.question_id WHERE scheduled<=NOW() ORDER BY questions.scheduled LIMIT 1
-```
+{{< / highlight >}}
 
 becomes even more readable:
 
-```php
+{{< highlight php "" >}}
 Question::with('answers')->where('scheduled','<=', date('Y-m-d H:i:s'))->orderBy('scheduled', 'desc')->first()
-```
+{{< / highlight >}}
 
 ## Built-in Application Testing
 
@@ -31,7 +31,7 @@ Many, many developers look at testing their applications as a chore; They write 
 
 Creating application tests in the Laravel framework is super easy, thanks again to the artisan tool. `artisan make:test UserTest` will create a brand new test class right in the "tests" folder where you can add unit tests for the corresponding class. The tests themselves are even written in very plain-to-understand syntax:
 
-```php
+{{< highlight php "" >}}
 class UserTest extends TestCase {
     public function testLoginPage() {
         $this->visit('/user/login')
@@ -42,11 +42,11 @@ class UserTest extends TestCase {
             ->seePageIs('/user/dashboard');
     }
 }
-```
+{{< / highlight >}}
 
 More than simply testing user-facing pages, I also use Laravel's built-in unit testing to make sure an API is working as expected:
 
-```php
+{{< highlight php "" >}}
 class ApiTest extends TestCase {
     public function testUserIndex() {
         $this->json('GET', '/api/v1/user')
@@ -58,7 +58,7 @@ class ApiTest extends TestCase {
             ]);
     }
 }
-```
+{{< / highlight >}}
 
 If writing tests concurrently with routes and controllers (you _are_ writing your tests while you write your routes and controllers, right??) you can test an entire application at any time by running `phpunit` from the terminal. Laravel's testing capabilities go [so much further](https://laravel.com/docs/testing), but this gives you a good idea of where it starts.
 
@@ -66,7 +66,7 @@ If writing tests concurrently with routes and controllers (you _are_ writing you
 
 Version control makes building complex applications with a large team of developers a lot simpler. Database development, however, has largely lived outside of the version control ecosystem, making it difficult to track who has the latest version of the data schema. Laravel solves this through its [migrations system](https://laravel.com/docs/migrations). Rather than build your database structure right in the database, you build a series of data model definitions directly inside your Laravel application. For example:
 
-```php
+{{< highlight php "" >}}
 Schema::create('questions', function (Blueprint $table) {
   $table->increments('id');
   $table->string('question', 255);
@@ -76,7 +76,7 @@ Schema::create('questions', function (Blueprint $table) {
   $table->datetime('posted')->nullable();
   $table->timestamps();
 });
-```
+{{< / highlight >}}
 
 It's pretty clear what this does: It defines a simple table with an id field, a few extra properties, and some timestamps. But by putting this inside your application, you achieve two important goals:
 
@@ -91,14 +91,14 @@ Scheduled tasks are another area where, many times, you have important code that
 
 A scheduled task in a Laravel application is just this simple:
 
-```php
+{{< highlight php "" >}}
 protected function schedule(Schedule $schedule) {
     $schedule->call(function() {
         Contest::where('active', true)->update(['active' => false]);
         Contest::where('scheduled', date('Y-m-d'))->limit(1)->update(['active' => true]);
     })->dailyAt('00:15');
 }
-```
+{{< / highlight >}}
 
 It doesn't get much easier than that. The scheduled task is right inside the application where it can leverage existing database models, controllers and methods.
 
@@ -106,39 +106,39 @@ It doesn't get much easier than that. The scheduled task is right inside the app
 
 Routing! This one should be absolutely be higher on the list. With Laravel it is insanely easy to define your [application routes](https://laravel.com/docs/routing) in a single unified location. You can make them as simple or as complex as you like. If you just have a couple of routes that tie into your controllers, it can be as simple as defining the route and indicating which controller method should handle it:
 
-```php
+{{< highlight php "" >}}
 Route::get('about', 'ContentController@showAbout');
 Route::get('faq', 'ContentController@showFAQ');
 Route::get('contact', 'ContentController@showContact');
-```
+{{< / highlight >}}
 
 However, you're building a complex RESTful API, you can also take advantage of more complex routing definitions:
 
-```php
+{{< highlight php "" >}}
 Route::resource('user', 'UserController');
 Route::resource('user.order', 'UserOrderController');
 Route::resource('user.order.item', 'UserOrderItemController');
-```
+{{< / highlight >}}
 
 With these three lines, we've established three API endpoints that _each_ respond to standard GET, PUT, POST, and DELETE HTTP requests, passing the information along to the indicated controller's methods. Even better, you can create the corresponding controllers using artisan:
 
-```bash
+{{< highlight bash "" >}}
 artisan controller:make UserController
 artisan controller:make UserOrderController
 artisan controller:make UserOrderItemController
-```
+{{< / highlight >}}
 
 The result of this is three brand new controller files, completely stubbed out with the appropriate `index`, `create`, `store`, `show`, `edit`, `update`, and `destroy` methods ready to be fleshed out.
 
 Additionally, through Laravel's flexible middleware system, you can even wrap all of these requests in a directive that ensures that only authenticated users can access the routes, right here in the same file:
 
-```php
+{{< highlight php "" >}}
 Route::group(array('middleware' => 'auth'), function() {
     Route::resource('user', 'UserController');
     Route::resource('user.order', 'UserOrderController');
     Route::resource('user.order.item', 'UserOrderItemController');
 });
-```
+{{< / highlight >}}
 
 This is really just the beginning of what Laravel’s routing system can do for us; There is so much more, including built-in CSRF protection, subdomain routing, and [custom middleware](https://laravel.com/docs/middleware).
 
