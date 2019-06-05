@@ -51,7 +51,7 @@ pygmentsUseClasses = true
         title   = "Want to learn more ?"
         content = "I'm always looking for a great project or team to work with, drop me a message and let's find time to talk about what you're working on."
         btnText = "Let's Talk"
-        btnURL  = "/contact"
+        btnURL  = "mailto:ams@amsoell.com"
 
     # Portfolio Section On Homepage
     [params.portfolio]
