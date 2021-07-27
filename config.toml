@@ -1,82 +1,214 @@
-baseURL = "https://amsoell.com/"
+# Page settings
+
+baseurl = "https://amsoell.com/"
 languageCode = "en-us"
 title = "Andy Soell"
-theme = "timer"
-pygmentsUseClasses = true
+theme = "hugo-orbit-theme"
+googleAnalytics = "UA-1446018-4"
 
-[menu]
-    [[menu.nav]]
-        name    = "Blog"
-        url     = "/blog"
-        weight  = 5
-    [[menu.nav]]
-        name    = "Contact"
-        url     = "/contact"
-        weight  = 6
+# Do not build files for websites. Need them? Set to false
+disableRSS = true
+disableSitemap = true
+disable404 = true
 
 [params]
-    home = "Home"
 
-    logo = "images/logo.png"
-    logo_text = "Andy Soell"
+# Meta
+    description = "Hugo Responsive Resume/CV Theme for Developers"
+    author = "Pavel Kanyshev"
 
-    # Banner Section
-    [params.banner]
-        enable  = true
-        bgImage = "images/slider.jpg"
-        heading = "Hi, my name is Andy & I am a"
-        description = "With 20 years of experience, I have occupied many roles including backend developer, project architect, team lead, and all around problem solver. This site shows you a bit about me and my work."
-        btn     = false
-        btnText = "Learn More"
-        btnURL  = "/about"
-        [[params.banner.flipText]]
-            title   = "developer"
-        [[params.banner.flipText]]
-            title   = "systems architect"
-        [[params.banner.flipText]]
-            title   = "problem solver"
-        [[params.banner.flipText]]
-            title   = "leader"
+# Theme styles
 
-    # Homepage About Section
-    [params.about]
-        enable  = true
-        title   = "About me"
-        content = "Hello! I'm a software developer who is passionate about changing the world. I have worked within a broad range of industries&mdash;from biosciences to marketing to non-profit legal&mdash;and in each role I have worked to define and overcome unique challenges. <br /><br /> When I'm not working I love to travel with my family and write. I currently live in Prague, and one day I will <em>definitely</em> finish writing this novel."
-        image   = "images/about/about.png"
+    # The original template comes with 6 colour schemes. You may choose styles below.
+    # "styles.css", "styles-2.css", "styles-3.css", "styles-4.css", "styles-5.css", "styles-6.css"
+    # are available. Also the source LESS files are included so
+    # it’s quick and easy to change the styling and colour scheme.
 
-    # Call to Action
-    [params.cta]
-        enable  = true
-        title   = "Want to learn more ?"
-        content = "I'm always looking for a great project or team to work with, drop me a message and let's find time to talk about what you're working on."
-        btnText = "Let's Talk"
-        btnURL  = "mailto:ams@amsoell.com"
+    styles = "styles-5.css"
 
-    # Portfolio Section On Homepage
-    [params.portfolio]
-        enable  = true
-        title   = "Projects"
-        subtitle= "A few examples of collaborations I have been part of."
+# Sidebar sections
 
-    # Feature Product Section
-    [params.featureProduct]
-        enable  = true
-        title   = "SOME OF OUR FEATURES WORKS"
-        subtitle= "Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus."
+    # Profile section
+    [params.profile]
+        name = "Andy Soell"
+        tagline = "Senior Software Engineer"
+        avatar = "profile.jpg"
+
+    # Contact section
+    [params.contact]
+        enable = true
+
+        [[params.contact.list]]
+        class = "email"
+        icon = "fa-envelope"
+        url = "mailto:ams@amsoell.com"
+        title = "ams@amsoell.com"
+
+        [[params.contact.list]]
+        class = "phone"
+        icon = "fa-phone"
+        url = "tel:+13126129959"
+        title = "+1 312 612 9959"
+
+        [[params.contact.list]]
+        class = "website"
+        icon = "fa-globe"
+        url = "//amsoell.com"
+        title = "amsoell.com"
+
+        [[params.contact.list]]
+        class = "linkedin"
+        icon = "fa-linkedin"
+        url = "//linkedin.com/in/amsoell"
+        title = "linkedin.com/in/amsoell"
+
+        [[params.contact.list]]
+        class = "github"
+        icon = "fa-github"
+        url = "//github.com/amsoell"
+        title = "github.com/amsoell"
+
+        [[params.contact.list]]
+        class = "twitter"
+        icon = "fa-twitter"
+        url = "//twitter.com/amsoell"
+        title = "@amsoell"
+
+    # Education section
+    [params.education]
+        enable = true
+        title = "Education"
+
+        [[params.education.list]]
+        degree = "BS in Computer Science"
+        college = "Taylor University"
+
+    # Interests section
+    [params.interests]
+        enable = true
+        title = "Interests"
+
+        [[params.interests.list]]
+        interest = "Writing"
+
+        [[params.interests.list]]
+        interest = "Travelling"
+
+        [[params.interests.list]]
+        interest = "Music"
+
+# Main body sections
+
+    # You may use markdown in summary, details and intro fields. But don't overdose, it's resume!:)
+
+    # Summary section
+    [params.summary]
+        enable = true
+        icon = "fa-user"
+        title = "Career Profile"
+        summary = "I am an experienced software engineer with more than twenty years of experience architecting, implementing and maintaining full-featured web, mobile, and desktop applications. I am looking for a team where I can exercise my extensive backend skills and further refine my passion for API development, dev-ops, and automation."
+
+    # Experiences section
+    [params.experiences]
+        enable = true
+        icon = "fa-briefcase"
+        title = "Experiences"
+
+        [[params.jobs.list]]
+        position = "Senior Software Engineer"
+        dates = "2017 - 2021"
+        company = "Resolution Bioscience, Seattle"
+        details = "As the first member of the software team, I worked alongside the Vice President of technology to successfully launch version 1 of our laboratory information management system (LIMS) platform. During my tenure we expanded the software engineering team to more than 20 members and implemented an efficient agile release and maintenance process. Key achievements include introducing best practices use of task review process, automated unit testing and continuous deployment. Primary technologies include PHP (Laravel, PHPUnit) and React as well as GitLab, Docker, Kubernetes and many parts of the AWS ecosystem."
+
+        [[params.jobs.list]]
+        position = "Co-Founder, Lead Backend Engineer"
+        dates = "2015 - 2017"
+        company = "Mettle, Chicago"
+        details = "As the co-founder and lead backend engineer, I consulted with clients around the world to help them implement application solutions on the web and desktop. My responsibilities ranged from sales and client relations to vendor management, in addition to my work as a software engineer. Primary technologies include PHP (Laravel, WordPress), React, Node.js, Electron desktop framework, Stripe API, Ruby"
+
+        [[params.jobs.list]]
+        position = "Application Developer"
+        dates = "2008 - 20015"
+        company = "The Institute for Justice, Washington, D.C."
+        details = "Reporting to the Director of Technology, I maintained and extended the custom non-profit customer relationship management software used firm-wide, as well as worked with the activism and development teams to build and deploy custom marketing-focused applications. Primary technologies include PHP (WordPress, Joomla), ASP, and SQL Server."
+
+        [[params.jobs.list]]
+        position = "Contract Software Developer"
+        dates = "2002 - 2008"
+        company = "Columbus, Ohio"
+        details = "I worked with clients across the United States to design, architect and build custom web sites and e-commerce solutions. Primary technologies include PHP, ASP, jQuery, Authorize.NET."
+
+        [[params.jobs.list]]
+        position = "Application Developer"
+        dates = "2000 - 2002"
+        company = "Lord, Sullivan & Yoder, Columbus, Ohio"
+        details = "My tenure Lord, Sullivan and Yoder advertising exposed me to a variety of vastly different types of projects, from standard marketing web sites to the development of CD-based product demo applications and unique advertising campaign solutions. Primary technologies include ASP, SQL Server, Adobe Flash and Shockwave."
+
+    # Projects section
+    [params.projects]
+        enable = true
+        icon = "fa-archive"
+        title = "Passions"
+        intro = "A job history only tells you so much. Here is what I am specifically passionate about in my role as a software engineer"
+
+        [[params.projects.list]]
+        title = "Mentoring"
+        tagline = "A team is only as strong as its best mentor. I love working with less experienced engineers, trying to show them ways to improve their skills and become a better member of the team. "
+
+        [[params.projects.list]]
+        title = "Git & Version Control"
+        tagline = "I'm a stickler when it comes to concise atomic commits, merge requests that are well articulated, and a clean and linear branching history."
+
+        [[params.projects.list]]
+        title = "RESTful API development"
+        tagline = "As software engineering trends solidify around microservices, its crucial to have well designed backend APIs that behave in a predictable and expected manner. I'm passionate about designing and building clean, well-documented APIs including Swagger documentation."
+
+        [[params.projects.list]]
+        title = "Test Coverage and Automation"
+        tagline = "I'm a big believer in test-driven design. If your codebase doesn't include test coverage, it isn't complete. Every merge requests should include test coverage, and every Git repo should include automated processing of test suites."
+
+    # Skills section
+    [params.skills]
+        enable = true
+        icon = "fa-rocket"
+        title = "Skills & Proficiency"
+
+        [[params.skills.list]]
+        skill = "PHP & Laravel"
+        level = "98%"
+
+        [[params.skills.list]]
+        skill = "MySQL"
+        level = "98%"
+                
+        [[params.skills.list]]
+        skill = "Javascript & jQuery"
+        level = "98%"
+
+        [[params.skills.list]]
+        skill = "Git"
+        level = "95%"
+
+        [[params.skills.list]]
+        skill = "HTML5 & CSS"
+        level = "95%"
+
+        [[params.skills.list]]
+        skill = "React & Vue"
+        level = "80%"
+
+        [[params.skills.list]]
+        skill = "Docker & Kubernetes"
+        level = "60%"
 
     # Footer section
+
+    # The original template is released under the Creative Commons Attribution 3.0 License.
+    # Please keep the original attribution link when using for your own project.
+    # If you'd like to use the template without the attribution,
+    # you can check out other license options via template author's website: themes.3rdwavemedia.com
+    # 
+    # As for Hugo port you may rewrite the "Ported for..." line with setting your name below.
+
     [params.footer]
-        something = "hi"
-        [[params.footer.social]]
-            icon = "ion-social-facebook"
-            link = "https://facebook.com/amsoell"
-        [[params.footer.social]]
-            icon = "ion-social-twitter"
-            link = "https://twitter.com/amsoell"
-        [[params.footer.social]]
-            icon = "ion-social-linkedin"
-            link = "https://linkedin.com/in/amsoell"
-        [[params.footer.social]]
-            icon = "ion-social-github"
-            link = "https://github.com/amsoell"
+        copyright = ""
