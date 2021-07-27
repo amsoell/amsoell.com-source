@@ -123,7 +123,7 @@ disable404 = true
 
         [[params.jobs.list]]
         position = "Application Developer"
-        dates = "2008 - 20015"
+        dates = "2008 - 2015"
         company = "The Institute for Justice, Washington, D.C."
         details = "Reporting to the Director of Technology, I maintained and extended the custom non-profit customer relationship management software used firm-wide, as well as worked with the activism and development teams to build and deploy custom marketing-focused applications. Primary technologies include PHP (WordPress, Joomla), ASP, and SQL Server."
 
