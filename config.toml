@@ -45,12 +45,6 @@ disable404 = true
         title = "ams@amsoell.com"
 
         [[params.contact.list]]
-        class = "phone"
-        icon = "fa-phone"
-        url = "tel:+13126129959"
-        title = "+1 312 612 9959"
-
-        [[params.contact.list]]
         class = "website"
         icon = "fa-globe"
         url = "//amsoell.com"
