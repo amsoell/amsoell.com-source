@@ -14,8 +14,9 @@ disable404 = true
 [params]
 
 # Meta
-    description = "Hugo Responsive Resume/CV Theme for Developers"
-    author = "Pavel Kanyshev"
+    description = "Andy Soell is a senior software engineer with over 20 years of experience developing lasting solution to complex problems."
+    author = "Andy Soell"
+    title = "Andy Soell - Senior Software Engineer"
 
 # Theme styles
 
