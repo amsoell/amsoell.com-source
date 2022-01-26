@@ -110,6 +110,12 @@ disable404 = true
         title = "Experiences"
 
         [[params.jobs.list]]
+        position = "Senior Software Consultant"
+        dates = "2021 - Present"
+        company = "Milkshake Studio, NYC"
+        details = "Lead efforts to design and develop the backend API for a stealth social network application. Responsibilities included full design and architecture of the backend API using the Laravel PHP framework, implementation of a full suite of test coverage and static code analysis, and creation of deployment strategies for the staging and production environments. Primary technologies include PHP (Laravel 8, PHPUnit, PHPStan) and MySQL as well as Docker, Kubernetes, GitHub Actions and Postman."
+
+        [[params.jobs.list]]
         position = "Senior Software Engineer"
         dates = "2017 - 2021"
         company = "Resolution Bioscience, Seattle"
@@ -175,7 +181,7 @@ disable404 = true
         [[params.skills.list]]
         skill = "MySQL"
         level = "98%"
-                
+
         [[params.skills.list]]
         skill = "Javascript & jQuery"
         level = "98%"
@@ -194,7 +200,11 @@ disable404 = true
 
         [[params.skills.list]]
         skill = "Docker & Kubernetes"
-        level = "60%"
+        level = "80%"
+
+        [[params.skills.list]]
+        skill = "AWS and DevOps"
+        level = "75%"
 
     # Footer section
 
@@ -202,7 +212,7 @@ disable404 = true
     # Please keep the original attribution link when using for your own project.
     # If you'd like to use the template without the attribution,
     # you can check out other license options via template author's website: themes.3rdwavemedia.com
-    # 
+    #
     # As for Hugo port you may rewrite the "Ported for..." line with setting your name below.
 
     [params.footer]
