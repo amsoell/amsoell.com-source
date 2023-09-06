@@ -63,12 +63,6 @@ disable404 = true
         url = "//github.com/amsoell"
         title = "github.com/amsoell"
 
-        [[params.contact.list]]
-        class = "twitter"
-        icon = "fa-twitter"
-        url = "//twitter.com/amsoell"
-        title = "@amsoell"
-
     # Education section
     [params.education]
         enable = true
@@ -101,7 +95,19 @@ disable404 = true
         enable = true
         icon = "fa-user"
         title = "Career Profile"
-        summary = "I am an experienced software engineer with more than twenty years of experience architecting, implementing and maintaining full-featured web, mobile, and desktop applications. I am looking for a team where I can exercise my extensive backend skills and further refine my passion for API development, dev-ops, and automation."
+        summary = "As a highly experienced problem solver, I work with teams across the world to help overcome technical hurdles and bring projects from idea to reality. I am passionate about putting my experience into practical use within a team of smart, motivated professionals, and I pride myself on my ability to work with peers and stakeholders to build solutions that are robust, scalable, and maintainable."
+
+    [params.expertise]
+        enable = true
+        icon = "fa-check"
+        title = "Areas of Expertise"
+
+        [[params.expertise.list]]
+        expertise = "Designing, building and maintaining robust API solutions using REST and GraphQL standards."
+        [[params.expertise.list]]
+        expertise = "Building custom integrations that work alongside industry standard products, maximizing uptime and minimizing maintenance costs."
+        [[params.expertise.list]]
+        expertise = " Leading engineering teams, prioritising and delegating tasks, and mentoring junior software engineers."
 
     # Experiences section
     [params.experiences]
@@ -110,40 +116,34 @@ disable404 = true
         title = "Experiences"
 
         [[params.jobs.list]]
-        position = "Senior Software Consultant"
+        position = "Senior Software Engineering Consultant"
         dates = "2021 - Present"
-        company = "Milkshake Studio, NYC"
-        details = "Lead efforts to design and develop the backend API for a stealth social network application. Responsibilities included full design and architecture of the backend API using the Laravel PHP framework, implementation of a full suite of test coverage and static code analysis, and creation of deployment strategies for the staging and production environments. Primary technologies include PHP (Laravel 8, PHPUnit, PHPStan) and MySQL as well as Docker, Kubernetes, GitHub Actions and Postman."
+        company = "The Tourneaux Group"
+        details = "Lending my expertise to a range of client projects, I collaborated with a variety of global digital marketing agencies to help coordinate and oversee client projects across a range of industries."
 
         [[params.jobs.list]]
         position = "Senior Software Engineer"
         dates = "2017 - 2021"
         company = "Resolution Bioscience, Seattle"
-        details = "As the first member of the software team, I worked alongside the Vice President of technology to successfully launch version 1 of our laboratory information management system (LIMS) platform. During my tenure we expanded the software engineering team to more than 20 members and implemented an efficient agile release and maintenance process. Key achievements include introducing best practices use of task review process, automated unit testing and continuous deployment. Primary technologies include PHP (Laravel, PHPUnit) and React as well as GitLab, Docker, Kubernetes and many parts of the AWS ecosystem."
+        details = "Working directly under the VP of Engineering, I lead efforts to build and expand the Resolution Bioscience laboratory information management system (LIMS)."
 
         [[params.jobs.list]]
         position = "Co-Founder, Lead Backend Engineer"
         dates = "2015 - 2017"
         company = "Mettle, Chicago"
-        details = "As the co-founder and lead backend engineer, I consulted with clients around the world to help them implement application solutions on the web and desktop. My responsibilities ranged from sales and client relations to vendor management, in addition to my work as a software engineer. Primary technologies include PHP (Laravel, WordPress), React, Node.js, Electron desktop framework, Stripe API, Ruby"
+        details = "Founded a full-service digital marketing consultancy where we worked alongside clients to help them define their product, architect the solution, and bring their vision to life. In addition to my duties as Co-Founder, my role as lead backend engineer put me in a position to oversee all backend engineering and DevOps efforts, delegate project tasks, and ensure software projects stayed on time and under budget."
 
         [[params.jobs.list]]
         position = "Application Developer"
         dates = "2008 - 2015"
         company = "The Institute for Justice, Washington, D.C."
-        details = "Reporting to the Director of Technology, I maintained and extended the custom non-profit customer relationship management software used firm-wide, as well as worked with the activism and development teams to build and deploy custom marketing-focused applications. Primary technologies include PHP (WordPress, Joomla), ASP, and SQL Server."
+        details = "Primary developer and architect for custom CRM database application as well as internal web applications. Designed, implemented and maintained custom tools to facilitate donor outreach, time tracking and project management tasks."
 
         [[params.jobs.list]]
         position = "Contract Software Developer"
         dates = "2002 - 2008"
         company = "Columbus, Ohio"
-        details = "I worked with clients across the United States to design, architect and build custom web sites and e-commerce solutions. Primary technologies include PHP, ASP, jQuery, Authorize.NET."
-
-        [[params.jobs.list]]
-        position = "Application Developer"
-        dates = "2000 - 2002"
-        company = "Lord, Sullivan & Yoder, Columbus, Ohio"
-        details = "My tenure Lord, Sullivan and Yoder advertising exposed me to a variety of vastly different types of projects, from standard marketing web sites to the development of CD-based product demo applications and unique advertising campaign solutions. Primary technologies include ASP, SQL Server, Adobe Flash and Shockwave."
+        details = "Worked as a contract developer to help clients complete a variety of interactive web based projects."
 
     # Projects section
     [params.projects]
@@ -161,7 +161,7 @@ disable404 = true
         tagline = "I'm a stickler when it comes to concise atomic commits, merge requests that are well articulated, and a clean and linear branching history."
 
         [[params.projects.list]]
-        title = "RESTful API development"
+        title = "RESTful and GraphQL API development"
         tagline = "As software engineering trends solidify around microservices, its crucial to have well designed backend APIs that behave in a predictable and expected manner. I'm passionate about designing and building clean, well-documented APIs including Swagger documentation."
 
         [[params.projects.list]]
@@ -180,10 +180,6 @@ disable404 = true
 
         [[params.skills.list]]
         skill = "MySQL"
-        level = "98%"
-
-        [[params.skills.list]]
-        skill = "Javascript & jQuery"
         level = "98%"
 
         [[params.skills.list]]

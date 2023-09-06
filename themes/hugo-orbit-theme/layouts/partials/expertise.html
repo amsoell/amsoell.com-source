@@ -1,0 +1,6 @@
+            <section class="section expertise-section">
+                <h2 class="section-title"><i class="fa {{ .Site.Params.expertise.icon }}"></i>{{ i18n "expertise" }}</h2>
+                <div class="expertise">
+                    <p>{{ range .Site.Params.expertise.list }}{{ .expertise }}{{ end }}</p>
+                </div><!--//expertise-->
+            </section><!--//section-->
